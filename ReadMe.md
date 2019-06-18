@@ -7,7 +7,7 @@
 This project is the third and last project for those who enrolled in Full-Stack Web Developer Nanodegree program which is introduced by Udacity platform. The aim of this project is to deploy the website that was built in the second project Item Catalog on the internet.
 
 ### 1st step: Getting the server:
-1.	Setting and starting up a new Ubuntu Linux server instance on Amazon Lightsail. 
+1.	Setting and starting up a new Ubuntu Linux server instance on [Amazon Lightsail](https://aws.amazon.com/lightsail). 
 ### 2nd step: Securing the server:
 1.	Updating all currently installed packages. 
 ```
@@ -17,10 +17,10 @@ sudo apt-get update && apt-get upgrade
 ```
 sudo nano /etc/ssh/sshd_config
 ```
->Change the ‘Port 22’ to ‘Port 2200’.
->Change the ‘PasswordAuthentication yes’ to ‘PasswordAuthentication no’.
->Change the ‘PermitRootLogin yes’ to ‘PermitRootLogin no’.
->Ctrl+X to save the file and then restart ssh 
+`Change the ‘Port 22’ to ‘Port 2200’.`
+`Change the ‘PasswordAuthentication yes’ to ‘PasswordAuthentication no’.`
+`Change the ‘PermitRootLogin yes’ to ‘PermitRootLogin no’.`
+`Ctrl+X to save the file and then restart ssh `
 ```
  sudo service ssh restart
 ```
@@ -39,11 +39,11 @@ sudo ufw enable
 sudo adduser grader
 sudo nano /etc/sudoers.d/grader 
 ```
-Then add the following text ‘grader ALL=(ALL) ALL’
+`Then add the following text` 
+>‘grader ALL=(ALL) ALL’
 1.	Setup SSH keys for grader
 
-On local machine ssh-keygen Then choose the path for storing public and private keys
-On remote machine home as user grader
+On local machine **ssh-keygen** Then choose the path for storing public and private keys on remote machine home as user **grader**
 ```
 sudo su - grader
 mkdir .ssh
@@ -52,11 +52,11 @@ sudo chmod 700 .ssh
 sudo chmod 600 .ssh/authorized_keys 
 nano .ssh/authorized_keys 
 ```
-Then paste the contents of the public key created on the local machine
+Then paste the contents of the **public key** created on the local machine
 ### 4th step: Preparing to deploy the project:
 1.	Configure the local timezone to UTC.
 
-Log in as grader, configure the time zone: 
+`Log in as` **grader**, `configure the time zone:` 
 
 	    sudo dpkg-reconfigure tzdata.
 
@@ -64,13 +64,14 @@ Log in as grader, configure the time zone:
 ```
 sudo apt-get install apache2
 ```
-install the Python 2 mod_wsgi package on your server: 
+`install the Python 2 mod_wsgi package on your server: `
 ```
 sudo apt-get install libapache2-mod-wsgi.
 ```
-install the Python 3 mod_wsgi package on your server: 
+`install the Python 3 mod_wsgi package on your server: `
+```
 sudo apt-get install libapache2-mod-wsgi-py3.
-
+```
 3.	Install and configure PostgreSQL:
 
 ```
@@ -102,22 +103,22 @@ sudo chown grader:grader catalog
 cd catalog
 nano catalog.wsgi
 ```
-Then place this in it 
-
->activate_this = '/var/www/catalog/catalog/venv3/bin/activate_this.py'
+`Then place this line in it `
+```
+activate_this = '/var/www/catalog/catalog/venv3/bin/activate_this.py'
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
 
->#!/usr/bin/python
+#!/usr/bin/python
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0, "/var/www/catalog/catalog/")
 sys.path.insert(1, "/var/www/catalog/")
 
->from catalog import app as application
+from catalog import app as application
 application.secret_key = "strong_secret_key"
-
+```
 `Restart Apache: `
 ```
 sudo service apache2 restart.
@@ -133,8 +134,9 @@ cd /var/www/catalog/catalog
 sudo virtualenv -p python3 venv3
 ```
 `Change the ownership to grader with: `
-
+```
 sudo chown -R grader:grader venv3/
+```
 `Activate the new environment: ` 
 
 source venv3/bin/activate
@@ -196,4 +198,3 @@ sudo a2ensite catalog.
 ```
  sudo service apache2 reload.
 ```
-
