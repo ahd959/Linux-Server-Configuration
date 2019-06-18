@@ -10,22 +10,24 @@ This project is the third and last project for those who enrolled in Full-Stack 
 1.	Setting and starting up a new Ubuntu Linux server instance on [Amazon Lightsail](https://aws.amazon.com/lightsail). 
 ### 2nd step: Securing the server:
 1.	Updating all currently installed packages. 
-``
+`
 sudo apt-get update && apt-get upgrade
-``
+`
 2.	Changing the SSH port from 22 to 2200. Make sure to configure the 
-``
+`
 sudo nano /etc/ssh/sshd_config
-``
+`
+
 ```
 `Change the ‘Port 22’ to ‘Port 2200’.`
 `Change the ‘PasswordAuthentication yes’ to ‘PasswordAuthentication no’.`
 `Change the ‘PermitRootLogin yes’ to ‘PermitRootLogin no’.`
 `Ctrl+X to save the file and then restart ssh `
 ```
-``
+
+`
  sudo service ssh restart
-``
+`
 
 3. Configure the Uncomplicated Firewall (UFW) to:
 ```
@@ -36,6 +38,7 @@ sudo ufw allow 80/tcp
 sudo ufw allow 123/udp
 sudo ufw enable
 ```
+
 #### 3rd step: Giving grader access to the server:
 ```
 sudo adduser grader
@@ -45,7 +48,7 @@ _Then add the following text_
 >‘grader ALL=(ALL) ALL’
 1.	Setup SSH keys for **grader**
 
-On local machine **ssh-keygen** Then choose the path for storing public and private keys on remote machine home as user **grader**
+On local machine **ssh-keygen** Then choose the path for storing **public** and **private keys** on remote machine home as user **grader**
 ```
 sudo su - grader
 mkdir .ssh
@@ -59,9 +62,10 @@ _Then paste the contents of the **public key** created on the local machine_
 1.	Configure the local timezone to UTC.
 
 _Log in as_ **grader**, _configure the time zone:_
-`
+```
 sudo dpkg-reconfigure tzdata.
-`
+sudo apt-get install ntp
+```
 
 2.	Install and configure Apache to serve a Python mod_wsgi application.
 `
@@ -115,7 +119,7 @@ Then place this line in it
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
 
->#!/usr/bin/python
+>#!/usr/bin/python3
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
@@ -178,6 +182,7 @@ Add the following line in
 `
 
 >#WSGIPythonPath directory|directory-1:directory-2:...
+
 >WSGIPythonPath /var/www/catalog/catalog/venv3/lib/python3.6/site-packages
 
 `
