@@ -18,9 +18,9 @@ sudo apt-get update && apt-get upgrade
 sudo nano /etc/ssh/sshd_config
 ```
 >Change the ‘Port 22’ to ‘Port 2200’.
-Change the ‘PasswordAuthentication yes’ to ‘PasswordAuthentication no’.
-Change the ‘PermitRootLogin yes’ to ‘PermitRootLogin no’.
-Ctrl+X to save the file and then restart ssh 
+>Change the ‘PasswordAuthentication yes’ to ‘PasswordAuthentication no’.
+>Change the ‘PermitRootLogin yes’ to ‘PermitRootLogin no’.
+>Ctrl+X to save the file and then restart ssh 
 ```
  sudo service ssh restart
 ```
