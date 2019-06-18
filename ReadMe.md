@@ -146,8 +146,7 @@ Change the ownership to grader with:
 sudo chown -R grader:grader venv3/
 `
 
-Activate the new environment:  
-`
+Activate the new environment:  `
 source venv3/bin/activate
 `
 
