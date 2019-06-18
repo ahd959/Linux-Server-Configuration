@@ -62,26 +62,23 @@ _Log in as_ **grader**, _configure the time zone:_
 `
 sudo dpkg-reconfigure tzdata.
 `
-2.	Install and configure Apache to serve a Python mod_wsgi application.
 
+2.	Install and configure Apache to serve a Python mod_wsgi application.
 `
 sudo apt-get install apache2
 `
 
 install the Python 2 mod_wsgi package on your server: 
-
 `
 sudo apt-get install libapache2-mod-wsgi.
 `
 
 install the Python 3 mod_wsgi package on your server: 
-
 `
 sudo apt-get install libapache2-mod-wsgi-py3.
 `
 
 3.	Install and configure PostgreSQL:
-
 ```
  sudo apt-get install libpq-dev python3-dev
  sudo apt-get install postgresql postgrwsql-contrib
@@ -99,7 +96,6 @@ GRANT ALL ON SCHEMA public TO catalog;
 exit
 ```
 4.	Installing **git**.
-
 `
 sudo apt-get install git
 `
@@ -130,7 +126,6 @@ sys.path.insert(1, "/var/www/catalog/")
 application.secret_key = "strong_secret_key"
 
 _Restart Apache:_
-
 `
 sudo service apache2 restart.
 `
@@ -142,19 +137,16 @@ sudo apt-get install python-virtualenv
 cd /var/www/catalog/catalog
 ```
 Create the virtual environment: 
-
 `
 sudo virtualenv -p python3 venv3
 `
 
 Change the ownership to grader with: 
-
 `
 sudo chown -R grader:grader venv3/
 `
 
 Activate the new environment:  
-
 `
 source venv3/bin/activate
 `
@@ -175,7 +167,6 @@ python3 __init__.py
 `
 
 To deactivate the virtual environment: 
-
 `
 deactivate.
 `
@@ -183,7 +174,6 @@ deactivate.
 3.	Set up and enable a virtual host
 
 Add the following line in
-
 `
  /etc/apache2/mods-enabled/wsgi.conf 
 `
@@ -217,13 +207,11 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 </VirtualHost>
 ```
 Enable virtual host: 
-
 `
 sudo a2ensite catalog. 
 `
 
 Reload Apache:
-
 `
  sudo service apache2 reload.
 `
