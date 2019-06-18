@@ -63,14 +63,19 @@ _Log in as_ **grader**, _configure the time zone:_
 sudo dpkg-reconfigure tzdata.
 `
 2.	Install and configure Apache to serve a Python mod_wsgi application.
+
 `
 sudo apt-get install apache2
 `
+
 install the Python 2 mod_wsgi package on your server: 
+
 `
 sudo apt-get install libapache2-mod-wsgi.
 `
+
 install the Python 3 mod_wsgi package on your server: 
+
 `
 sudo apt-get install libapache2-mod-wsgi-py3.
 `
@@ -94,9 +99,11 @@ GRANT ALL ON SCHEMA public TO catalog;
 exit
 ```
 4.	Installing **git**.
+
 `
 sudo apt-get install git
 `
+
 ### 5th step: Deploying the Item Catalog project:
 1.	Clone and setup **Item Catalog** project from Github repo.
 ```
@@ -123,9 +130,11 @@ sys.path.insert(1, "/var/www/catalog/")
 application.secret_key = "strong_secret_key"
 
 _Restart Apache:_
+
 `
 sudo service apache2 restart.
 `
+
 2.	Install the virtual environment and dependencies
 ```
 sudo apt-get install python3-pip
@@ -133,17 +142,23 @@ sudo apt-get install python-virtualenv
 cd /var/www/catalog/catalog
 ```
 Create the virtual environment: 
+
 `
 sudo virtualenv -p python3 venv3
 `
+
 Change the ownership to grader with: 
+
 `
 sudo chown -R grader:grader venv3/
 `
+
 Activate the new environment:  
+
 `
 source venv3/bin/activate
 `
+
 Install the following dependencies:
 ```
 pip install httplib2
@@ -160,15 +175,19 @@ python3 __init__.py
 `
 
 To deactivate the virtual environment: 
+
 `
 deactivate.
 `
+
 3.	Set up and enable a virtual host
 
 Add the following line in
+
 `
  /etc/apache2/mods-enabled/wsgi.conf 
 `
+
 >#WSGIPythonPath directory|directory-1:directory-2:...
 >WSGIPythonPath /var/www/catalog/catalog/venv3/lib/python3.6/site-packages
 
@@ -198,10 +217,13 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 </VirtualHost>
 ```
 Enable virtual host: 
+
 `
 sudo a2ensite catalog. 
 `
+
 Reload Apache:
+
 `
  sudo service apache2 reload.
 `
