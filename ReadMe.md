@@ -116,17 +116,12 @@ cd catalog
 nano catalog.wsgi
 ```
 Then place this line in it 
-
->activate_this = '/var/www/catalog/catalog/venv3/bin/activate_this.py'
-with open(activate_this) as file_:
-    exec(file_.read(), dict(__file__=activate_this))
-
 ```python
 activate_this = '/var/www/catalog/catalog/venv3/bin/activate_this.py'
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
 
-#!/usr/bin/python
+#!/usr/bin/python3
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
