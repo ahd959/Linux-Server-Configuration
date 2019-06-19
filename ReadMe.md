@@ -214,9 +214,9 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 ```
 ##### Server login Info:
 ```
-Application URL: http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/.
+Application URL: [ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/).
 DNS: [carcompany.ddns.net](http://carcompany.ddns.net/)
-IP address: [3.19.88.5](http://3.19.88.52)
+IP address: [3.19.88.5]( http://3.19.88.5/)
 SSH port: 2200.
 ```
 ##### Useful commands: 
