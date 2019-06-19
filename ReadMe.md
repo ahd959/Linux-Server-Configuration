@@ -50,7 +50,7 @@ _Then add the following text_
 >‘grader ALL=(ALL) ALL’
 1.	Setup SSH keys for **grader**
 
-On local machine **ssh-keygen** Then choose the path for storing **public** and **private keys** on remote machine home as user **grader**
+On local machine `ssh-keygen` Then choose the path for storing **public** and **private keys** on remote machine home as user **grader**
 ```
 sudo su - grader
 mkdir .ssh
