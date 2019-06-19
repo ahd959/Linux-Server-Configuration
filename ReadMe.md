@@ -212,12 +212,27 @@ sudo nano /etc/apache2/sites-available/catalog.conf
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
-Enable virtual host: 
+#### Useful commands: 
+
+Virtual host: 
 `
-sudo a2ensite catalog. 
+sudo a2ensite catalog.
+`
+`
+sudo a2dissite catalog.
 `
 
-Reload Apache:
-`
- sudo service apache2 reload.
-`
+Apache:
+```
+sudo service apache2 reload.
+sudo service apache2 restart. 
+sudo service apache2 status.
+```
+
+References
+-	https://aws.amazon.com/lightsail/
+-	http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/#working-with-virtual-environments
+-	https://httpd.apache.org/
+-	https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/
+-	https://www.youtube.com/watch?v=_P29ZHu_feU
+-	https://www.youtube.com/watch?v=goToXTC96Co
