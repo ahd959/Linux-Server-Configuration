@@ -182,11 +182,11 @@ Add the following line in
 `
  /etc/apache2/mods-enabled/wsgi.conf 
 `
+```
+#WSGIPythonPath directory|directory-1:directory-2:...
 
->#WSGIPythonPath directory|directory-1:directory-2:...
-
->WSGIPythonPath /var/www/catalog/catalog/venv3/lib/python3.6/site-packages
-
+WSGIPythonPath /var/www/catalog/catalog/venv3/lib/python3.6/site-packages
+```
 `
 sudo nano /etc/apache2/sites-available/catalog.conf 
 `
