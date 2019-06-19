@@ -214,10 +214,14 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 ```
 #### Useful commands: 
 
-Virtual host: 
+Virtual host:
+
+Enable
 `
 sudo a2ensite catalog.
 `
+
+Disable
 `
 sudo a2dissite catalog.
 `
