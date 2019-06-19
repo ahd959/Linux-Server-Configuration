@@ -4,7 +4,9 @@
 ## ReadMe.md 
 
 ### Introduction
-This project is the third and last project for those who enrolled in Full-Stack Web Developer Nanodegree program which is introduced by Udacity platform. The aim of this project is to deploy the website that was built in the second project Item Catalog on the internet.
+This project took a baseline installation of a Linux server and prepare it to host the web applications. The need of securing the server from a number of attack vectors, install and configure a database server, and finally deploying Item Catalog web application to this server.
+
+A full understanding of how the web applications work, how they are hosted, and the interactions between multiple systems. All in all, full skills of turning a brand-new, bare bones, Linux server into the secure and efficient web application host applications need will be granted.
 
 ### 1st step: Getting the server:
 1.	Setting and starting up a new Ubuntu Linux server instance on [Amazon Lightsail](https://aws.amazon.com/lightsail). 
