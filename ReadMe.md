@@ -214,7 +214,7 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 ```
 ##### Server login Info:
 ```
-DNS [carcompany.ddns.net]
+DNS [carcompany.ddns.net](https://carcompany.ddns.net/)
 IP address: 3.19.88.5
 SSH port: 2200.
 ```
