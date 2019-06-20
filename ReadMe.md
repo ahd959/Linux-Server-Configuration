@@ -214,9 +214,12 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 ```
 ##### Server login Info:
 ```
-Application URL: [ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/).
+Application URL: [ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/)
+`
 DNS: [carcompany.ddns.net](http://carcompany.ddns.net/)
+`
 IP address: [3.19.88.5]( http://3.19.88.5/)
+`
 SSH port: 2200.
 ```
 ##### Useful commands: 
@@ -242,10 +245,20 @@ sudo service apache2 status.
 
 #### References:
 ```
--	https://aws.amazon.com/lightsail/
--	http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/#working-with-virtual-environments
--	https://httpd.apache.org/
--	https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/
--	https://www.youtube.com/watch?v=_P29ZHu_feU
--	https://www.youtube.com/watch?v=goToXTC96Co
+- https://aws.amazon.com/lightsail/
+- http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/#working-with-virtual-environments
+- https://httpd.apache.org/
+- https://aws.amazon.com/premiumsupport/knowledge-center/new-user-accounts-linux-instance/
+- https://www.youtube.com/watch?v=_P29ZHu_feU
+- https://www.youtube.com/watch?v=goToXTC96Co
+- https://docs.sqlalchemy.org/en/13/orm/cascades.html
+- https://raw.githubusercontent.com/stueken/FSND-P5_Linux-Server-Configuration/master/README.md
+- https://libraries.io/github/golgtwins/Udacity-P7-Linux-Server-Configuration#udacity-full-stack-web-developer-nanodegree-project-7-linux_server_configuration
+- https://devhub.io/repos/iraquitan-udacity-fsnd-p5-linux-server-config
+- https://github.com/boisalai/udacity-linux-server-configuration
+- https://help.ubuntu.com/community/UFW 
+- http://askubuntu.com/questions/256013/could-not-reliably-determine-the-
+- https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps 
+- https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps 
+
 ```
