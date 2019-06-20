@@ -12,11 +12,11 @@ A full understanding of how the web applications work, how they are hosted, and 
 1.	Setting and starting up a new Ubuntu Linux server instance on [Amazon Lightsail](https://aws.amazon.com/lightsail). 
 ### 2nd step: Securing the server:
 1.	Updating all currently installed packages. 
-`
+`bash
 sudo apt-get update && apt-get upgrade
 `
 2.	Changing the SSH port from 22 to 2200. Make sure to configure the 
-`
+`bash
 sudo nano /etc/ssh/sshd_config
 `
 
@@ -27,12 +27,12 @@ sudo nano /etc/ssh/sshd_config
 `Ctrl+X to save the file and then restart ssh `
 ```
 
-`
+`bash
  sudo service ssh restart
 `
 
 3. Configure the Uncomplicated Firewall (UFW) to:
-```
+```bash
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow 2200/tcp
