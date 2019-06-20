@@ -213,7 +213,7 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 </VirtualHost>
 ```
 ##### Server login Info:
-```link
+```
 Application URL: [ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/)
 DNS: [carcompany.ddns.net](http://carcompany.ddns.net/)
 IP address: [3.19.88.5](http://3.19.88.5/)
