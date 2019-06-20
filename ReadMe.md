@@ -115,7 +115,7 @@ sudo chown grader:grader catalog
 cd catalog
 nano catalog.wsgi
 ```
-Then place this line in it 
+Then place these lines in it 
 ```python
 activate_this = '/var/www/catalog/catalog/venv3/bin/activate_this.py'
 with open(activate_this) as file_:
@@ -214,9 +214,9 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 ```
 ##### Server login Info:
 ```
-Application URL:[ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/)
-DNS:[carcompany.ddns.net](http://carcompany.ddns.net/)
-IP address:[3.19.88.5]( http://3.19.88.5/)
+Application URL: [ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com)
+DNS: [carcompany.ddns.net](http://carcompany.ddns.net)
+IP address: [3.19.88.5](http://3.19.88.5)
 SSH port: 2200.
 ```
 ##### Useful commands: 
