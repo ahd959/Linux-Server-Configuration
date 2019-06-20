@@ -12,11 +12,11 @@ A full understanding of how the web applications work, how they are hosted, and 
 1.	Setting and starting up a new Ubuntu Linux server instance on [Amazon Lightsail](https://aws.amazon.com/lightsail). 
 ### 2nd step: Securing the server:
 1.	Updating all currently installed packages. 
-`bash
+`
 sudo apt-get update && apt-get upgrade
 `
 2.	Changing the SSH port from 22 to 2200. Make sure to configure the 
-`bash
+`
 sudo nano /etc/ssh/sshd_config
 `
 
@@ -27,7 +27,7 @@ sudo nano /etc/ssh/sshd_config
 `Ctrl+X to save the file and then restart ssh `
 ```
 
-`bash
+`
  sudo service ssh restart
 `
 
@@ -42,7 +42,7 @@ sudo ufw enable
 ```
 
 #### 3rd step: Giving grader access to the server:
-```
+```bash
 sudo adduser grader
 sudo nano /etc/sudoers.d/grader 
 ```
@@ -51,7 +51,7 @@ _Then add the following text_
 1.	Setup SSH keys for **grader**
 
 On local machine `ssh-keygen` Then choose the path for storing **public** and **private keys** on remote machine home as user **grader**
-```
+```bash
 sudo su - grader
 mkdir .ssh
 touch .ssh/authorized_keys 
@@ -64,7 +64,7 @@ _Then paste the contents of the **public key** created on the local machine_
 1.	Configure the local timezone to UTC.
 
 _Log in as_ **grader**, _configure the time zone:_
-```
+```bash
 sudo dpkg-reconfigure tzdata.
 sudo apt-get install ntp
 ```
@@ -85,14 +85,14 @@ sudo apt-get install libapache2-mod-wsgi-py3.
 `
 
 3.	Install and configure PostgreSQL:
-```
+```bash
  sudo apt-get install libpq-dev python3-dev
  sudo apt-get install postgresql postgrwsql-contrib
  sudo su - postgres
  psql
 ```
 Then
-```
+```bash
 CREATE USER catalog WITH PASSWORD 'catalog';
 CREATE DATABASE catalog WITH OWNER catalog;
 \c catalog
@@ -108,7 +108,7 @@ sudo apt-get install git
 
 ### 5th step: Deploying the Item Catalog project:
 1.	Clone and setup **Item Catalog** project from Github repo.
-```
+```bash
 cd /var/www/
 git clone https://github.com/ahd959/Item_Catalog.git catalog
 sudo chown grader:grader catalog
@@ -137,7 +137,7 @@ sudo service apache2 restart.
 `
 
 2.	Install the virtual environment and dependencies
-```
+```bash
 sudo apt-get install python3-pip
 sudo apt-get install python-virtualenv
 cd /var/www/catalog/catalog
@@ -157,7 +157,7 @@ source venv3/bin/activate
 `
 
 Install the following dependencies:
-```
+```bash
 pip install httplib2
 pip install requests
 pip install --upgrade oauth2client
@@ -213,7 +213,7 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 </VirtualHost>
 ```
 ##### Server login Info:
-```
+```link
 Application URL: [ec2-3-19-88-5.us-east-2.compute.amazonaws.com](http://ec2-3-19-88-5.us-east-2.compute.amazonaws.com/)
 DNS: [carcompany.ddns.net](http://carcompany.ddns.net/)
 IP address: [3.19.88.5](http://3.19.88.5/)
@@ -234,7 +234,7 @@ sudo a2dissite catalog.
 `
 
 Apache:
-```
+```bash
 sudo service apache2 reload.
 sudo service apache2 restart. 
 sudo service apache2 status.
