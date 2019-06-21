@@ -17,7 +17,7 @@ sudo apt-get update && apt-get upgrade
 `
 ### Update
 Automatically install updates
-:white_check_mark: This step was added after first review to meet the specifications.
+: This step was added after first review to meet the specifications.
 
 The `unattended-upgrades` package can be used to automatically install important system updates.
 - Enable automatic (security) updates: `sudo apt-get install unattended-upgrades`.
