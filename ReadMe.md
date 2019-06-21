@@ -166,9 +166,6 @@ sudo virtualenv -p python3 venv3
 
 Change the ownership to grader with: 
 `
-sudo chown -R grader:grader catalog/
-`
-`
 sudo chown -R grader:grader venv3/
 `
 
