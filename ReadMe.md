@@ -263,6 +263,8 @@ sudo service apache2 status.
 
 #### References:
 ```
+* https://hub.udacity.com/rooms/
+* https://knowledge.udacity.com/
 * https://aws.amazon.com/lightsail/
 * http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi/#working-with-virtual-environments
 * https://httpd.apache.org/
