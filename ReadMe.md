@@ -149,6 +149,9 @@ sudo virtualenv -p python3 venv3
 
 Change the ownership to grader with: 
 `
+sudo chown -R grader:grader catalog/
+`
+`
 sudo chown -R grader:grader venv3/
 `
 
@@ -197,6 +200,7 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 <VirtualHost *:80>
     ServerName 3.19.88.5
   ServerAlias ec2-3-19-88-5.us-west-2.compute.amazonaws.com
+    WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/venv3/lib/python3.6/site-packages
     WSGIScriptAlias / /var/www/catalog/catalog.wsgi
     <Directory /var/www/catalog/catalog/>
     	Order allow,deny
