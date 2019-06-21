@@ -15,6 +15,23 @@ A full understanding of how the web applications work, how they are hosted, and 
 `
 sudo apt-get update && apt-get upgrade
 `
+### Update
+Automatically install updates
+:white_check_mark: This step was added after first review to meet the specifications.
+
+The `unattended-upgrades` package can be used to automatically install important system updates.
+- Enable automatic (security) updates: `sudo apt-get install unattended-upgrades`.
+- Edit `/etc/apt/apt.conf.d/50unattended-upgrades`, uncomment the line `${distro_id}:${distro_codename}-updates` and save it.
+- Modify `/etc/apt/apt.conf.d/20auto-upgrades` file so that the upgrades are downloaded and installed every day:
+  ```
+  APT::Periodic::Update-Package-Lists "1";
+  APT::Periodic::Download-Upgradeable-Packages "1";
+  APT::Periodic::AutocleanInterval "7";
+  APT::Periodic::Unattended-Upgrade "1";
+  ```
+- Enable it: `sudo dpkg-reconfigure --priority=low unattended-upgrades`.
+- Restart Apache: `sudo service apache2 restart`.
+
 2.	Changing the SSH port from 22 to 2200. Make sure to configure the 
 `
 sudo nano /etc/ssh/sshd_config
