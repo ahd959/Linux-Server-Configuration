@@ -278,5 +278,6 @@ sudo service apache2 status.
 * http://askubuntu.com/questions/256013/could-not-reliably-determine-the-
 * https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps 
 * https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps 
+* https://help.ubuntu.com/lts/serverguide/automatic-updates.html
 
 ```
